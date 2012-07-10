@@ -93,15 +93,19 @@ body {
 #header_menu_background_for_ie {
     overflow:hidden;
     background-color: white;
-    padding: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 5px;
 }
 
 #header .main_menu a {
-     font-family: arial;
-     font-size: 30px;
-     padding-right: 15px;
-     text-decoration: none;
-     color: #4682b4;
+    font-family: arial;
+    font-size: 30px;
+    margin-top: 15px;
+    padding-right: 15px;
+    text-decoration: none;
+    color: #4682b4;
 }
 
 #header .main_menu a:hover {
@@ -222,6 +226,7 @@ body {
 
 .sidebar_right_content {
     padding: 10px;
+    margin-bottom: 15px;
 }
 
 .sidebar_right_content_title {
@@ -264,7 +269,7 @@ body {
 
 /* FOOTER */
 
-.footer {
+#footer {
     font-size: 11px;
     font-family: arial;
     color: #949494;
@@ -277,7 +282,7 @@ body {
     border-top: 1px solid #CCC;
 }
 
-.footer a {
+#footer a {
     color: #4682b4;
     font-size: 16px;
     text-decoration: none;

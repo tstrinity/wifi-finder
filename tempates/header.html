@@ -1,0 +1,29 @@
+<div class="user_panel">
+    <a href="/">Зарегистрироваться</a>
+    <a href="/">Войти</a>
+</div>
+<div class="main_menu">
+    <div id="header_menu_background_for_ie">
+        <img id="logo_footsteps" src="{{ STATIC_PREFIX }}images/header.png">
+        <a href="/points/">точки доступа</a>
+        <a href="/providers/">провайдеры</a>
+        <a href="/posts/">новости</a>
+        <a href="/">о нас</a>
+
+    </div>
+</div>
+<div class="logo">
+    <a href="/" title="На главную страницу">
+        <img src="{{ STATIC_PREFIX }}images/wifi.png"  width="75" height="75" style="border: none"/>
+    </a>
+</div>
+<div class="search">
+    <form id="search_form" name="search" method="get" action="/search">
+        <input type="submit" value="">
+        <input type="text" name="q" value="поиск точек по адресу"
+               onfocus="this.value = (this.value =='поиск точек по адресу') ? '' : this.value"
+               onblur="this.value = (this.value == '') ? 'поиск точек по адресу' : this.value"
+               autocomplete="off">
+
+    </form>
+</div>

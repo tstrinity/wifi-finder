@@ -13,14 +13,22 @@
 {% block sidebar %}
     <div class="sidebar_right">
         <div class="sidebar_right_background_for_ie">
-                <div class="sidebar_right_content">
-                    <p class="sidebar_right_content_title">Фильтр</p>
-                    Провайдер:
-                    <select id="provider_filter_select" title="Провайдер">
-                        <option value="">Все</option>
-                    </select>
-                    <p><input type="button" value="Применить" id="apply_filter_button"></p>
-                </div>
+            <div class="sidebar_right_content">
+                <p class="sidebar_right_content_title">Поиск</p>
+                <input type="text" autocomplete="off"  id="search_form_points"
+                       onblur="this.value = (this.value == '') ? 'Например: минск бобруйская' : this.value"
+                       onfocus="this.value = (this.value =='Например: минск бобруйская') ? '' : this.value"
+                       value="Например: минск бобруйская" name="q">
+                <input type="button" id="search_form_points_button" value="">
+            </div>
+            <div class="sidebar_right_content">
+                <p class="sidebar_right_content_title">Фильтр</p>
+                Провайдер:
+                <select id="provider_filter_select" title="Провайдер">
+                    <option value="">Все</option>
+                </select>
+                <p><input type="button" value="Применить" id="apply_filter_button"></p>
+            </div>
         </div>
     </div>
     {{ block.super }}

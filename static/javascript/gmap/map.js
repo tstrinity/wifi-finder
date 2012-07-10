@@ -11,6 +11,7 @@ function Map()
 {
     var _this = this;
     this.map = null;
+    this.geocoder = null;
     this.markerClusterer = null;
 
     this.center_longitude = 53.90221226318637;
@@ -19,6 +20,7 @@ function Map()
     this.providers = null;
 
     this.init = function(){
+        _this.geocoder = new google.maps.Geocoder();
         if (_this.map == null) {
             var center = new google.maps.LatLng(_this.center_longitude, _this.center_latitude);
             var options = {
@@ -33,12 +35,25 @@ function Map()
         _this.getPoints("");
     }
 
+    this.codeAddress = function(){
+        var address = $("#search_form_points").val();
+        _this.geocoder.geocode( {'address' : address},function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                _this.map.setCenter(results[0].geometry.location);
+                _this.map.setZoom(15);
+            } else {
+                alert("Geocode was not successful for the following reason: " + status);
+            }
+        });
+    }
+
     this.getProviders = function(){
         $.ajax({
             type: "POST",
             url: "/providers/getAllProviders",
             success: function(data){
                 // if index page adding values to filter
+                // and binding functions to search
                 if($("#provider_filter_select").length) {
                     $("#apply_filter_button").click(function () {
                         temp = $("#provider_filter_select option:selected").val();
@@ -47,6 +62,14 @@ function Map()
                     var providers_comboBox = $("#provider_filter_select");
                     $.each(data, function (i, item) {
                         providers_comboBox.append('<option value="' + item.fields.name + '">' + item.fields.name + '</option>');
+                    });
+                    $("#search_form_points").keypress(function (e){
+                        if (e.keyCode == 13) {
+                            _this.codeAddress();
+                        }
+                    });
+                    $("#search_form_points_button").click(function (){
+                        _this.codeAddress();
                     });
                 }
                 _this.providers = data;
@@ -68,7 +91,7 @@ function Map()
                     var contentString = '<div class="content"><ul>' +
                         '<li>' + item.fields.name + '</li>' +
                         '<li>' + _this.providers[item.fields.provider-1].fields.name + '</li>' +
-                        '<li><img src="/static/images/signal_strength/' + item.fields.average_signal +'.png"> </li>'
+                        '<li><img src="/static/images/signal_strength/' + item.fields.average_signal +'.png"> </li>'+
                         '</ul></div>';
                     var latlng = new google.maps.LatLng(item.fields.coordinate_latitude,
                         item.fields.coordinate_longitude);
@@ -101,7 +124,6 @@ function Map()
 
 }
 
-$().init
 
 $().ready(function () {
     var map = new Map();

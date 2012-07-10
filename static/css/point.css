@@ -55,3 +55,27 @@
     background-color: #4682b4;
     border: none;
 }
+
+
+#search_form_points {
+    font-size:12px;
+    font-family:arial;
+    border:1px solid #D1D1D1;
+    background:#fff;
+    color:#CCCCCC;
+    padding:2px 4px;
+    height:15px;
+    width:226px;
+    float:left;
+    display:block;
+}
+
+#search_form_points_button {
+    border:0;
+    background:url("../images/bg-button-enter.png") no-repeat 0 0;
+    width:21px;
+    height:21px;
+    display:block;
+    float:left;
+    margin-left:5px;
+}
