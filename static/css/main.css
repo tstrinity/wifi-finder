@@ -282,11 +282,35 @@ body {
     border-top: 1px solid #CCC;
 }
 
-#footer a {
+
+.footer_nav {
+    position: relative;
+    float: left;
+    width: 164px;
+    margin: 20px 10px;
+    display: block;
+    list-style: none;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+
+.footer_nav a {
     color: #4682b4;
-    font-size: 16px;
+    font-size: 14px;
     text-decoration: none;
 }
+
+.footer_nav a:hover {
+    color: #1e90ff;
+    text-decoration: underline;
+}
+
+
+/* BUTTONS */
 
 
 .default_button {
