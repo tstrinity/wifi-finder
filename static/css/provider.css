@@ -1,0 +1,19 @@
+.provider {
+    margin-bottom: 20px;
+}
+
+.provider_image {
+    width: 140px;
+    height: 96px;
+    align: left;
+    margin-right: 20px;
+}
+
+.provider_name {
+    font-size: 18px;
+    font-family: arial;
+    text-align: left;
+    margin-right: 30px;
+    margin-left: 30px;
+    vertical-align: middle;
+}

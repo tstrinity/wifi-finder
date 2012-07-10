@@ -1,0 +1,27 @@
+{% extends "points/points_master_page.html" %}
+{% block title %}
+    <title>Карта точек доступа</title>
+{% endblock %}
+{% block content %}
+    <div class="post">
+        <p class="page_title">Глобальная карта точек доступа</p>
+        <div id="map">
+        </div>
+        <script src="{{ STATIC_PREFIX }}javascript/gmap/map.js"></script>
+    </div>
+{% endblock %}
+{% block sidebar %}
+    <div class="sidebar_right">
+        <div class="sidebar_right_background_for_ie">
+                <div class="sidebar_right_content">
+                    <p class="sidebar_right_content_title">Фильтр</p>
+                    Провайдер:
+                    <select id="provider_filter_select" title="Провайдер">
+                        <option value="">Все</option>
+                    </select>
+                    <p><input type="button" value="Применить" id="apply_filter_button"></p>
+                </div>
+        </div>
+    </div>
+    {{ block.super }}
+{% endblock %}

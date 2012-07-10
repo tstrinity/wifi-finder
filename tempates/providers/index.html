@@ -1,0 +1,21 @@
+{% extends 'providers/providers_master_page.html' %}
+{% block title %}
+    <title>Список провайдеров</title>
+{% endblock %}
+{% block content %}
+    <div class="post">
+        <p class="page_title">Список провайдеров</p>
+        <table>
+        {% for provider in providers %}
+            <tr class="provider">
+                <td>
+                    <a href="http://{{ provider.site }}"><img class="provider_image"
+                                                          src="/{{ provider.logo }}"
+                                                          alt="{{ provider.name }} wifi"/></a>
+                </td>
+                <td class="provider_name">{{ provider.name }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+{% endblock %}
