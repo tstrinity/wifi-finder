@@ -288,3 +288,44 @@ body {
     text-decoration: none;
 }
 
+
+.default_button {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    -moz-user-select: none;
+    background: -moz-linear-gradient(#FAFAFA, #EAEAEA) repeat scroll 0 0 transparent;
+    border-color: #D4D4D4 #D4D4D4 #BCBCBC;
+    border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: 1px;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-family: helvetica,arial,freesans,clean,sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 24px;
+    padding: 0 10px;
+    position: relative;
+    text-shadow: 0 1px 0 #FFFFFF;
+    white-space: nowrap;
+    behavior: url(/static/javascript/PIE/PIE.htc);
+}
+
+.default_button:hover {
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    border-color: #518CC6;
+    border-bottom-color: #2A65A0;
+    background-color: #599BDC;
+    background: -webkit-linear-gradient(#599BDC, #3072B3);
+    background: -moz-linear-gradient(#599BDC, #3072B3);
+    background: -webkit-linear-gradient(#599BDC, #3072B3);
+}
+

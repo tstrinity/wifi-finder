@@ -46,14 +46,8 @@
     border: none;
 }
 
-#provider_filter {
-
-}
-
-#apply_filter_button {
-    margin-top: 15px;
-    background-color: #4682b4;
-    border: none;
+#provider_filter_select {
+    margin-bottom: 15px;
 }
 
 
@@ -62,7 +56,6 @@
     font-family:arial;
     border:1px solid #D1D1D1;
     background:#fff;
-    color:#CCCCCC;
     padding:2px 4px;
     height:15px;
     width:226px;
