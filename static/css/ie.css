@@ -1,0 +1,14 @@
+.default_button {
+    background-color: #599BDC;
+    color : #ffffff;
+    text-decoration: none;
+    white-space: nowrap;
+    height: 25px;
+    padding: 0 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.default_button:hover {
+
+}

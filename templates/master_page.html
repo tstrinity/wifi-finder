@@ -6,6 +6,9 @@
     {% get_static_prefix as STATIC_PREFIX %}
     {% block includes %}
         <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/main.css" type="text/css" media="screen" />
+        <!--[if IE]>
+        <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/ie.css" type="text/css" media="screen" />
+        <![endif]-->
     {% endblock %}
     {% block title %}
     {% endblock %}

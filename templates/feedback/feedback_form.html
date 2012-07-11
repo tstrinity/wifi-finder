@@ -1,0 +1,36 @@
+{% extends "master_page.html" %}
+{% block title %}<title>Обратная свзязь</title>{% endblock %}
+{% block content %}
+<div class="feedback_form">
+<p class="page_title">Обратная связь</p>
+{% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+        <li{% if message.tags %} class="{{message.tags}}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+    <form action="" method="post">
+        <div class="field">
+            <ul>
+            <li>{{ feedback_form.email.label }}</li>
+            <li>{{ feedback_form.email }}</li>
+            </ul>
+        </div>
+        <div class="field">
+            <ul>
+                <li>{{ feedback_form.type.label }}</li>
+                <li>{{ feedback_form.type }}</li>
+            </ul>
+        </div>
+        <div class="field">
+            <ul>
+                <li>{{ feedback_form.message.label }}</li>
+                <li>{{ feedback_form.message }}</li>
+            </ul>
+        </div>
+        <input type="submit" value="Отправить" class="default_button" />
+    </form>
+</div>
+{% endblock %}
+

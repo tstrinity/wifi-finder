@@ -4,32 +4,44 @@
     <script type="text/javascript" src="{{ STATIC_PREFIX }}javascript/gmap/map.js"></script>
 {% endblock %}
 {% block title %}
-    <title xmlns="http://www.w3.org/1999/html">Рассказать про точку доступа</title>
+    <title>Рассказать про точку доступа</title>
 {% endblock %}
 {% block content %}
-<h2>Добавление точки доступа: </h2>
 <div class="post">
     <p class="page_title">Добавление точки доступа</p>
     <form action="/points/create/" method="post">
         <p>{{ form.non_field_errors }}</p>
         <div class="field">
-            <p>{{ form.name.errors}}</p>
-            <p>{{ form.name.label }}{{ form.name }}</p>
+            <ul>
+                <li>{{ form.name.errors}}</li>
+                <li>{{ form.name.label }}</li>
+                <li>{{ form.name }}</li>
+            </ul>
         </div>
         <div class="field">
-            <p>{{ form.average_signal.errors }}</p>
-            <p>{{ form.average_signal.label }}{{ form.average_signal }}</p>
+            <ul>
+                <li>{{ form.average_signal.errors }}</li>
+                <li>{{ form.average_signal.label }}</li>
+                <li>{{ form.average_signal }}</li>
+            </ul>
         </div>
         <div class="field">
-            <p>{{ form.provider.errors }}</p>
-            <p>{{ form.provider.label }}{{ form.provider }}</p>
+            <ul>
+                <li>{{ form.provider.errors }}</li>
+                <li>{{ form.provider.label }}</li>
+                <li>{{ form.provider }}</li>
+            </ul>
         </div>
         <div class="field">
-            <p>Введите координаты или укажите место на карте</p>
-            <p>{{ form.coordinate_latitude.errors }}</p>
-            <p>{{ form.coordinate_latitude.label }}{{ form.coordinate_latitude }}</p>
-            <p>{{ form.coordinate_longitude.errors }}</p>
-            <p>{{ form.coordinate_longitude.label }}{{ form.coordinate_longitude }}</p>
+            <ul>
+                <li>Введите координаты или укажите место на карте</li>
+                <li>{{ form.coordinate_latitude.errors }}</li>
+                <li>{{ form.coordinate_latitude.label }}</li>
+                <li>{{ form.coordinate_latitude }}</li>
+                <li>{{ form.coordinate_longitude.errors }}</li>
+                <li>{{ form.coordinate_longitude.label }}</li>
+                <li>{{ form.coordinate_longitude }}</li>
+            </ul>
         </div>
         <div id="map">
         </div>

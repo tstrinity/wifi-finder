@@ -27,10 +27,3 @@
 .post p.title a {
     color: #4682b4;
 }
-
-#map {
-    width: 640px;
-    height: 480px;
-    margin-left: 100px;
-    padding-bottom: 50px;
-}
