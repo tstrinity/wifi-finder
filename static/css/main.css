@@ -15,34 +15,25 @@ time, mark, audio, video {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font-family: Tahome, Arial;
+    font-family: Tahome, Arial, sans-serif;
     font: inherit;
     vertical-align: baseline;
     outline:0;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
+
 body {
 
 }
 ol, ul {
     list-style: none;
 }
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
+
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
 b{font-weight:bold;}
 i{font-style:italic;}
 
@@ -65,7 +56,7 @@ body {
     padding-left:60px;
     min-width:940px;
     max-width:1154px;
-    border:0px solid red;
+    border:0 solid red;
 }
 
 #header{
@@ -79,10 +70,9 @@ body {
 #header .main_menu{
     text-align:left;
     font-size:30px;
-    font-family: Verdana,sans-serif;
+    font-family: Arial,sans-serif;
     text-transform:lowercase;
     margin: 0 15px 15px;
-    zoom: 1;
     overflow:hidden;
     -webkit-box-shadow: 0 0 15px #969696;
     -moz-box-shadow: 0 0 15px #969696;
@@ -100,7 +90,7 @@ body {
 }
 
 #header .main_menu a {
-    font-family: arial;
+    font-family: arial, sans-serif;
     font-size: 30px;
     margin-top: 15px;
     padding-right: 15px;
@@ -118,7 +108,7 @@ body {
     top: 100px;
     left: 15px;
     text-align: left;
-    font-family: Tahoma, Arial;
+    font-family: Tahoma, Arial, sans-serif;
     text-transform: lowercase;
 }
 
@@ -167,7 +157,7 @@ body {
 
 #header .search form input[type="text"] {
     font-size:12px;
-    font-family: Tahoma, Arial;
+    font-family:  Arial, sans-serif;
     border:1px solid #D1D1D1;
     background:#fff;
     color:#CCCCCC;
@@ -230,7 +220,7 @@ body {
 }
 
 .sidebar_right_content_title {
-    font-family: arial;
+    font-family: arial, sans-serif;
     font-size: 18px;
     color: #4682b4;
     margin-bottom: 10px;
@@ -243,7 +233,7 @@ body {
 }
 
 #add_new_point_invitation a {
-    font-family: arial;
+    font-family: arial, sans-serif;
     font-size: 30px;
     padding-right: 30px;
     text-decoration: none;
@@ -260,7 +250,7 @@ body {
 
 .page_title {
     font-size: 30px;
-    font-family: arial;
+    font-family: arial, sans-serif;
     margin-left: 35px;
     margin-bottom: 35px;
     color: #4682b4;
@@ -270,7 +260,7 @@ body {
 
 #footer {
     font-size: 11px;
-    font-family: arial;
+    font-family: arial, sans-serif;
     color: #949494;
     overflow: hidden;
     padding-top: 30px;
@@ -313,19 +303,12 @@ body {
 
 
 .default_button {
-    -moz-border-bottom-colors: none;
-    -moz-border-image: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    -moz-user-select: none;
     background: #599BDC;
-    border-color: #D4D4D4 #D4D4D4 #BCBCBC;
+    border: 1px solid #D4D4D4;
+    border-bottom-color: #BCBCBC;
     border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
-    border-style: solid;
-    border-width: 1px;
     color: white;
     cursor: pointer;
     display: inline-block;
@@ -340,16 +323,13 @@ body {
     height: 25px;
 }
 
-.default_button:hover {
+.default_button: hover {
     color: white;
     text-decoration: none;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
     border-color: #518CC6;
     border-bottom-color: #2A65A0;
-    background-color: #599BDC;
-    background: -webkit-linear-gradient(#599BDC, #3072B3);
-    background: -moz-linear-gradient(#599BDC, #3072B3);
-    background: -webkit-linear-gradient(#599BDC, #3072B3);
+    background: #599BDC;
 }
 
 .feedback_form {
