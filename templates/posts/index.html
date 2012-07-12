@@ -14,5 +14,20 @@
             </div>
         {% endfor %}
     {% endif %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if posts.has_previous %}
+                <a href="?page={{ posts.previous_page_number }}" style="text-decoration: none">←</a>
+            {% endif %}
+
+            <span class="current">
+                {{ posts.number }} из {{ posts.paginator.num_pages }}.
+            </span>
+
+            {% if posts.has_next %}
+                <a href="?page={{ posts.next_page_number }}">-></a>
+            {% endif %}
+        </span>
+    </div>
     </div>
 {% endblock %}
