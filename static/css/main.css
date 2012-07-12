@@ -304,11 +304,12 @@ body {
 
 .default_button {
     background: #599BDC;
-    border: 1px solid #D4D4D4;
-    border-bottom-color: #BCBCBC;
+    border-color: #D4D4D4 #D4D4D4 #BCBCBC;
     border-radius: 3px 3px 3px 3px;
     -webkit-border-radius: 3px 3px 3px 3px;
     -moz-border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: 1px;
     color: white;
     cursor: pointer;
     display: inline-block;
@@ -323,13 +324,16 @@ body {
     height: 25px;
 }
 
-.default_button: hover {
+.default_button:hover {
     color: white;
     text-decoration: none;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
     border-color: #518CC6;
     border-bottom-color: #2A65A0;
-    background: #599BDC;
+    background-color: #599BDC;
+    background: -webkit-linear-gradient(#599BDC, #3072B3);
+    background: -moz-linear-gradient(#599BDC, #3072B3);
+    background: -webkit-linear-gradient(#599BDC, #3072B3);
 }
 
 .feedback_form {

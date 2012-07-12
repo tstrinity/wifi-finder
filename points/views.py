@@ -18,18 +18,18 @@ def index(request):
 #method for returning back json response with all points
 def getAllPoints(request):
     if request.method == 'POST':
-        if not len(request.POST['provider']):
-            temp_output = serializers.serialize('python', Point.objects.all())
-        else:
-            filter_provider = Provider.objects.get(name = request.POST['provider'])
-            temp_output = serializers.serialize('python',
-                Point.objects.filter(provider = filter_provider))
-        output = json.dumps(temp_output, cls=DjangoJSONEncoder)
+        try:
+            if not len(request.POST['provider']):
+                temp_output = serializers.serialize('python', Point.objects.all())
+            else:
+                filter_provider = Provider.objects.get(name = request.POST['provider'])
+                temp_output = serializers.serialize('python',
+                    Point.objects.filter(provider = filter_provider))
+            output = json.dumps(temp_output, cls=DjangoJSONEncoder)
+        except :
+            return HttpResponse(json.dumps({'success' : 'no'}, cls=DjangoJSONEncoder),
+                mimetype="application/json")
         return HttpResponse(output, mimetype="application/json")
-
-#render add point template
-def add(request):
-    return render_to_response('points/add.html', {})
 
 def create(request):
     form = PointAddForm(request.POST or None)

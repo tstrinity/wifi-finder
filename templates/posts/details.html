@@ -5,7 +5,7 @@
 {% block content %}
     <div class="post">
         <p class="title"><a href="/posts/{{ post.id }}/">{{ post.title }}</a> </p>
-        <p class="content">{{ post.content }}</p>
+        <p class="content">{{ post.content|safe }}</p>
         <p class="created_at">{{ post.created_at }}</p>
         <div id="map" style="width:600px; height:400px">
         </div>

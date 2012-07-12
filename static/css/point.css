@@ -4,6 +4,11 @@
     margin-left: 30px;
     margin-bottom: 15px;
 }
+
+.post img {
+    margin: 10px;
+}
+
 .post p {
     margin-left: 15px;
 }

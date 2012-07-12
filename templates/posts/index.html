@@ -9,7 +9,7 @@
         {% for post in posts %}
             <div class="post">
                 <p class="title"><a href="/posts/{{ post.id }}/">{{ post.title }}</a> </p>
-                <p class="content">{{ post.content }}</p>
+                <p class="content"> {{ post.content|safe|slice:":400" }}<a href="/posts/{{ post.id }}/">...</a></p>
                 <p class="created_at">{{ post.created_at }}</p>
             </div>
         {% endfor %}

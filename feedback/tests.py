@@ -1,9 +1,9 @@
+
 from django.test import TestCase
 from django.test.client import Client
 
-
-class ResponsePostTest(TestCase):
-    def test_index_response(self):
+class ResponseTest(TestCase):
+    def test_feedback_view(self):
         c = Client()
-        response = c.get('/posts/','')
+        response = c.get('/feedback/','')
         self.assertEqual(response.status_code, 200)

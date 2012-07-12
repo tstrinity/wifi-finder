@@ -48,7 +48,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = 'E:/Personal/Projects/python/mocca/media/'
+MEDIA_ROOT = 'E:/Personal/Projects/python/mocca/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -93,6 +93,7 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.cache.CacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     #'django.middleware.csrf.CsrfViewMiddleware',
@@ -170,3 +171,14 @@ FEEDBACK_CHOICES = (
     ('bug', u'Баг'),
     ('feature_request', u'Добавить функционал')
 )
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+        }
+}
+
+CACHE_MIDDLEWARE_SECONDS = '60'
+
+CACHE_MIDDLEWARE_KEY_PREFIX = ''

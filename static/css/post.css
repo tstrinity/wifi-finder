@@ -3,6 +3,8 @@
     margin-right: 30px;
     margin-left: 30px;
     margin-bottom: 15px;
+    display: block;
+    overflow: hidden;
 }
 
 .post p {
