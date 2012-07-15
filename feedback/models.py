@@ -8,6 +8,7 @@ from django.conf import settings
 class Feedback(models.Model):
     class Meta:
         ordering = ['-time']
+        db_table = 'feedbacks'
 
     email   = models.EmailField(verbose_name=u'Email')
     type    = models.CharField(choices=settings.FEEDBACK_CHOICES, max_length=100, verbose_name=_(u'Тип'))
@@ -19,3 +20,4 @@ class Feedback(models.Model):
 
     def get_absolute_url(self):
         return reverse('admin:view-feedback', args=[self.id])
+

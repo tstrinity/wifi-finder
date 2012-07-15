@@ -11,12 +11,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'db',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'mocca_db',                      # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
+        'PASSWORD': '5008849',                  # Not used with sqlite3.
+        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -34,7 +34,7 @@ TIME_ZONE = 'America/Chicago'
 LANGUAGE_CODE = 'ru-RU'
 
 SITE_ID = 1
-
+3
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
 USE_I18N = True
@@ -48,7 +48,8 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = 'E:/Personal/Projects/python/mocca/media'
+#MEDIA_ROOT = 'E:/Personal/Projects/python/mocca/media'
+MEDIA_ROOT = '/home/ts-trinity/Projects/mocca/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -70,7 +71,8 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    'E:/Personal/Projects/python/mocca/static',
+     '/home/ts-trinity/Projects/mocca/static',
+    #'E:/Personal/Projects/python/mocca/static',
     #'F:/Projects/python/mocca/static',
 )
 
@@ -109,7 +111,8 @@ ROOT_URLCONF = 'mocca.urls'
 WSGI_APPLICATION = 'mocca.wsgi.application'
 
 TEMPLATE_DIRS = (
-    'E:/Personal/Projects/python/mocca/templates'
+     '/home/ts-trinity/Projects/mocca/templates'
+    #'E:/Personal/Projects/python/mocca/templates'
     #'F:/Projects/python/mocca/templates'
 )
 

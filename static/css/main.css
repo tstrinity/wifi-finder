@@ -46,7 +46,7 @@ textarea{resize:none;}
 
 
 body {
-     background-color: white;
+     background-color: #dcdcdc;
  }
 
 #layout{
@@ -159,8 +159,8 @@ body {
     font-size:12px;
     font-family:  Arial, sans-serif;
     border:1px solid #D1D1D1;
-    background:#fff;
-    color:#CCCCCC;
+    background: white;
+    color: black;
     padding:2px 4px;
     height:15px;
     width:226px;

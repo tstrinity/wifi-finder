@@ -30,6 +30,8 @@ class Point(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        db_table = 'points'
 
 class MyJsonEncoder(json.JSONEncoder):
     def default(self, obj):

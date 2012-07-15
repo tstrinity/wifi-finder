@@ -9,6 +9,9 @@ class Provider(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        db_table = 'providers'
+
 class ProviderForm(ModelForm):
     class Meta:
         model = Provider
