@@ -9,16 +9,27 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+
+#production db
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'mocca_db',                      # Or path to database file if using sqlite3.
-        'USER': 'root',                      # Not used with sqlite3.
-        'PASSWORD': '5008849',                  # Not used with sqlite3.
-        'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mocca_db',
+        'USER': 'mocca',
+        'PASSWORD': '123123',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
+
+# hack for sphinx because of django 1.4
+DATABASE_ENGINE = 'mysql'
+DATABASE_HOST = DATABASES['default']['HOST']
+DATABASE_PORT = DATABASES['default']['PORT']
+DATABASE_NAME = DATABASES['default']['NAME']
+DATABASE_USER = DATABASES['default']['USER']
+DATABASE_PASSWORD = DATABASES['default']['PASSWORD']
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -27,7 +38,7 @@ DATABASES = {
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Minsk'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -48,8 +59,8 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-#MEDIA_ROOT = 'E:/Personal/Projects/python/mocca/media'
-MEDIA_ROOT = '/home/ts-trinity/Projects/mocca/media'
+MEDIA_ROOT = 'E:/Personal/Projects/python/mocca/media'
+#MEDIA_ROOT = '/home/ts-trinity/Projects/mocca/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -71,8 +82,8 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-     '/home/ts-trinity/Projects/mocca/static',
-    #'E:/Personal/Projects/python/mocca/static',
+    #'/home/ts-trinity/Projects/mocca/static',
+    'E:/Personal/Projects/python/mocca/static',
     #'F:/Projects/python/mocca/static',
 )
 
@@ -111,12 +122,20 @@ ROOT_URLCONF = 'mocca.urls'
 WSGI_APPLICATION = 'mocca.wsgi.application'
 
 TEMPLATE_DIRS = (
-     '/home/ts-trinity/Projects/mocca/templates'
-    #'E:/Personal/Projects/python/mocca/templates'
+    #'/home/ts-trinity/Projects/mocca/templates'
+    'E:/Personal/Projects/python/mocca/templates'
     #'F:/Projects/python/mocca/templates'
 )
 
 INSTALLED_APPS = (
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'djangosphinx',
     'feedback',
     'providers',
     'posts',
@@ -125,13 +144,6 @@ INSTALLED_APPS = (
     #'admin_tools.theming',
     #'admin_tools.menu',
     #'admin_tools.dashboard',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.admin',
     # 'django.contrib.admindocs',
 )
 
@@ -185,3 +197,5 @@ CACHES = {
 CACHE_MIDDLEWARE_SECONDS = '5'
 
 CACHE_MIDDLEWARE_KEY_PREFIX = ''
+
+SPHINX_API_VERSION = 0x116

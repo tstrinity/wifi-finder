@@ -1,4 +1,5 @@
 from django.db import models
+from djangosphinx import SphinxSearch
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
@@ -10,3 +11,12 @@ class Post(models.Model):
 
     class Meta:
         db_table = 'posts'
+
+    search = SphinxSearch(
+        index = 'posts',
+        weights = {
+            'title': 90,
+            'content' : 100,
+            'created_at' : 10,
+        }
+    )

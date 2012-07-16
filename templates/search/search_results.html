@@ -1,0 +1,19 @@
+{% extends "posts/posts_master_page.html" %}
+{% block title %}
+    <title>Wifi-finder - Результаты поиска</title>
+{% endblock %}
+{% block content %}
+    <div class="post">
+        <p class="page_title">Результаты поиска</p>
+        {% if posts %}
+            {% for post in posts %}
+                <div class="post">
+                    <p class="title"><a href="/posts/{{ post.id }}/">{{ post.title }}</a> </p>
+                    <p class="content"> {{ post.content|safe|slice:":400" }}<a href="/posts/{{ post.id }}/">...</a></p>
+                    <p class="created_at">{{ post.created_at }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+{% endblock %}
