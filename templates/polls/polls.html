@@ -21,9 +21,6 @@
 		{% csrf_token %}
 		<h1 class="dps_poll_content_header"><span class="dps_poll_title">{% trans "Poll" %}:</span> {{ poll.title }}</h1>
 		{% if user.is_authenticated %}
-		<div class="dps_poll_userspace">
-			{% trans "User" %}: {{ user }}
-		</div>
 		{% endif %} 
 		<div class="dps_poll_body">
 			{% if poll.get_cookie_name in request.COOKIES %}
