@@ -46,7 +46,7 @@ textarea{resize:none;}
 
 
 body {
-     background-color: #f6f8ff;
+     background-color: #ffffff;
  }
 
 #layout{
@@ -83,7 +83,7 @@ body {
 #header_menu_background_for_ie {
     overflow:hidden;
     background-color: white;
-    padding-top: 15px;
+    padding-top: 25px;
     padding-right: 15px;
     padding-left: 15px;
     padding-bottom: 5px;
@@ -193,7 +193,10 @@ body {
 
 #content_left_background_for_ie {
     background-color: white;
-    padding: 15px;
+    padding-top: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 15px;
 }
 
 /* SIDEBAR */
@@ -252,7 +255,8 @@ body {
     font-size: 30px;
     font-family: arial, sans-serif;
     margin-left: 35px;
-    margin-bottom: 35px;
+    margin-top: 20px;
+    margin-bottom: 15px;
     color: #4682b4;
 }
 
@@ -344,3 +348,10 @@ body {
     margin-bottom: 5px;
 }
 
+.inner_content {
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 30px;
+    display: block;
+    overflow: hidden;
+}

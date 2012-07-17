@@ -3,12 +3,14 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=7" />
     {% load static %}
+    {% load polls_tags %}
     {% get_static_prefix as STATIC_PREFIX %}
     {% block includes %}
         <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/main.css" type="text/css" media="screen" />
         <!--[if IE]>
         <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/ie.css" type="text/css" media="screen" />
         <![endif]-->
+        <script type="text/javascript" src="{{ STATIC_PREFIX }}javascript/jquery-1.7.2.min.js"></script>
     {% endblock %}
     {% block title %}
     {% endblock %}
@@ -18,7 +20,7 @@
     <div id="layout">
         <div id="header">
         {% block head %}
-            {% include "header.html" %}
+            {% include "_header.html" %}
         {% endblock %}
         </div>
         <div class="content_left">
@@ -30,18 +32,16 @@
         {% block sidebar %}
         <div class="sidebar_right">
             <div class="sidebar_right_background_for_ie">
-
                 <div id="add_new_point_invitation">
                     Хочешь помочь нам? Знаешь где есть wifi?<br/>
                     <a href="/points/create/">Расскажи нам!</a>
                 </div>
-
             </div>
         </div>
         {% endblock %}
         <div class="clear"></div>
         <div id="footer">
-            {% include "footer.html" %}
+            {% include "_footer.html" %}
         </div>
     </div>
 </body>

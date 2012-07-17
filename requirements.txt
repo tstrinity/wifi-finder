@@ -1,0 +1,4 @@
+Django==1.4
+pil==1.1.7
+django-sphinx
+python-memcached

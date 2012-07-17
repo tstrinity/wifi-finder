@@ -1,10 +1,37 @@
 {% extends "master_page.html" %}
+{% load i18n posts_tags %}
+{% load i18n polls_tags %}
+{% block includes %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ STATIC_PREFIX }}css/post.css" type="text/css" media="screen" />
+{% endblock %}
 {% block title %}
     <title>Начальная страница</title>
 {% endblock %}
 {% block content %}
-    <div class="post">
+    <div class="inner_content">
         <p class="page_title">Главная страница</p>
-        Добро пожаловать на сайт :)
+        <div class="post">
+            <p class="content">Добро пожаловать на сайт где Вы можете найти точки доступа WI-FI.
+            Знаете о точках доступа ? Поделитесь с нами!</p>
+        </div>
+        {% get_latest_posts %}
+        <p class="page_title">Последние новости</p>
+        {% for post in latest_posts %}
+        <div class="post">
+            <p class="title"><a href="/posts/{{ post.id }}/">{{ post.title }}</a> </p>
+            <p class="content"> {{ post.content|safe|slice:":400" }}<a href="/posts/{{ post.id }}/">...</a></p>
+            <p class="created_at">{{ post.created_at }}</p>
+            <a class="default_button" href="/posts/{{ post.id }}/">Читать</a>
+        </div>
+        {% endfor %}
     </div>
+{% endblock %}
+{% block sidebar %}
+{{ block.super }}
+<div class="sidebar_right">
+    <div class="sidebar_right_background_for_ie">
+        {% poll_queue "Main"  %}
+    </div>
+</div>
 {% endblock %}

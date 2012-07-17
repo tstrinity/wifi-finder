@@ -36,7 +36,7 @@
     height: 560px;
     margin-left: 10px;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 
 .errorlist {
@@ -51,7 +51,7 @@
 }
 
 #provider_filter_select {
-    margin-bottom: 15px;
+
 }
 
 
