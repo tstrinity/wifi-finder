@@ -59,8 +59,8 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-#MEDIA_ROOT = 'E:/Personal/Projects/python/mocca/media'
-MEDIA_ROOT = '/home/ts-trinity/Projects/mocca/media'
+MEDIA_ROOT = 'E:/Personal/Projects/python/mocca/media'
+#MEDIA_ROOT = '/home/ts-trinity/Projects/mocca/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -82,8 +82,8 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/ts-trinity/Projects/mocca/static',
-    #'E:/Personal/Projects/python/mocca/static',
+    #'/home/ts-trinity/Projects/mocca/static',
+    'E:/Personal/Projects/python/mocca/static',
     #'F:/Projects/python/mocca/static',
 )
 
@@ -122,8 +122,8 @@ ROOT_URLCONF = 'mocca.urls'
 WSGI_APPLICATION = 'mocca.wsgi.application'
 
 TEMPLATE_DIRS = (
-    '/home/ts-trinity/Projects/mocca/templates'
-    #'E:/Personal/Projects/python/mocca/templates'
+    #'/home/ts-trinity/Projects/mocca/templates'
+    'E:/Personal/Projects/python/mocca/templates'
     #'F:/Projects/python/mocca/templates'
 )
 

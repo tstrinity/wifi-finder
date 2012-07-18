@@ -1,15 +1,13 @@
 #coding: utf-8
 
 import decimal
-from django.forms.widgets import TextInput, HiddenInput, RadioSelect, Select
+from django.forms.widgets import Select
 from django.utils import simplejson as json
 from django.db import models
 from providers.models import Provider
 from django import forms
 
 #Model for access point
-#has one foreign key for
-#Provider
 class Point(models.Model):
 
     SIGNAL_QUALITY_CHOISES = (
@@ -20,12 +18,12 @@ class Point(models.Model):
     )
 
     name = models.CharField(u'Название', max_length=50)
-    coordinate_latitude = models.DecimalField(u'Широта: ',decimal_places=20, max_digits=30)
-    coordinate_longitude = models.DecimalField(u'Долгота: ', decimal_places=20, max_digits=30)
-    average_signal = models.IntegerField(u'Качество сигнала: ', choices=SIGNAL_QUALITY_CHOISES)
+    coordinate_latitude = models.DecimalField(u'Широта',decimal_places=20, max_digits=30)
+    coordinate_longitude = models.DecimalField(u'Долгота', decimal_places=20, max_digits=30)
+    average_signal = models.IntegerField(u'Качество сигнала', choices=SIGNAL_QUALITY_CHOISES)
     added_on = models.DateTimeField(auto_now=True)
     additional_info = models.CharField(u'Дополнительная информация', max_length=200)
-    provider = models.ForeignKey(Provider, verbose_name=u'Провайдер: ')
+    provider = models.ForeignKey(Provider, verbose_name=u'Провайдер')
 
     def __unicode__(self):
         return self.name

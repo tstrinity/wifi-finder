@@ -1,4 +1,4 @@
-{% load i18n %}
+
 
 $(document).ready(function() {
 	var vote_url = '{% url poll_ajax_vote poll.pk %}';

@@ -4,7 +4,6 @@ from django.db import transaction
 from django.utils import simplejson
 from utils import set_cookie
 
-
 def authpass(user, queue):
     if queue != None:
         if queue.auth:
@@ -32,7 +31,6 @@ def poll_ajax_vote(request, poll_pk):
             user = request.user
         else:
             user = None
-
         vote = Vote.objects.create(poll=poll,
                                    ip=request.META['REMOTE_ADDR'],
                                    user=user)
@@ -47,12 +45,9 @@ def poll_ajax_vote(request, poll_pk):
                     Choice.objects.create(vote=vote, item=item)
         except:
             return HttpResponse('Data recognition failed', status=400)
-
         response = HttpResponse(status=200)
         set_cookie(response, poll.get_cookie_name(), poll_pk)
-
         return response
-
     return HttpResponse(status=400)
 
 

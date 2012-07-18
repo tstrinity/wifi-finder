@@ -7,8 +7,6 @@
         <p class="title"><a href="/posts/{{ post.id }}/">{{ post.title }}</a> </p>
         <p class="content">{{ post.content|safe }}</p>
         <p class="created_at">{{ post.created_at }}</p>
-        <div id="map" style="width:600px; height:400px">
-        </div>
-        <script src="{{ STATIC_PREFIX }}javascript/map.js"></script>
+        <input type="button" class="default_button" value="Назад" onclick="javascript:history.go(-1)">
     </div>
 {% endblock %}

@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 from djangosphinx import SphinxSearch
 
 class Post(models.Model):
@@ -10,6 +11,8 @@ class Post(models.Model):
         return self.title
 
     class Meta:
+        verbose_name = _('Post')
+        verbose_name_plural = _('Posts')
         db_table = 'posts'
 
     search = SphinxSearch(
