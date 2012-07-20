@@ -10,28 +10,33 @@ from points.models import Point,PointAddForm
 import django.utils.simplejson as json
 from providers.models import Provider
 
-#index method for displaying
-#all points on map
-
+#index method for displaying all points on map
+#caching for 2 minutes
 @cache_page(60 * 2)
 def index(request):
     return render_to_response('points/index.html',{})
 
 
-#method for returning back json response with all points
+#method for returning back json response with all points to ajax request
 def getAllPoints(request):
     if request.method == 'POST':
         try:
+            #trying to get from cache
             points = cache.get('points')
             if points == None:
+                #if not fetching data from db and caching
                 points = Point.objects.all()
                 cache.set('points', points, 60 * 1)
+            #if provider name is given in request returning all points belonging to it
+            #if not returning all points
             if not len(request.POST['provider']):
+                #serialinzing data from queryset to list type
                 temp_output = serializers.serialize('python', points)
             else:
                 filter_provider = Provider.objects.get(name = request.POST['provider'])
                 temp_output = serializers.serialize('python',
                     points.filter(provider = filter_provider))
+            #serializing as json using simplejson
             output = json.dumps(temp_output, cls=DjangoJSONEncoder)
         except :
             return HttpResponse(json.dumps({'success' : 'no'}, cls=DjangoJSONEncoder),
@@ -39,6 +44,8 @@ def getAllPoints(request):
         return HttpResponse(output, mimetype="application/json")
 
 
+#view method for adding new Point
+#returns form if GET and validates and saves data if POST
 @cache_page(60 * 5)
 def create(request):
     form = PointAddForm(request.POST or None)

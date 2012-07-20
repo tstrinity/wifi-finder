@@ -1,7 +1,8 @@
-
 from django.test import TestCase
 from django.test.client import Client
 
+
+#testing if the feedback page is available
 class ResponseTest(TestCase):
     def test_feedback_view(self):
         c = Client()

@@ -1,8 +1,6 @@
 #coding: utf-8
 
-import decimal
 from django.forms.widgets import Select
-from django.utils import simplejson as json
 from django.db import models
 from providers.models import Provider
 from django import forms
@@ -28,15 +26,12 @@ class Point(models.Model):
     def __unicode__(self):
         return self.name
 
+    #using custom table name
     class Meta:
         db_table = 'points'
 
-class MyJsonEncoder(json.JSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, decimal.Decimal):
-            return "%s" %obj
 
-
+#form for adding a new point
 class PointAddForm(forms.ModelForm):
     name = forms.CharField(label=u'Название', min_length=2,max_length=30,required=True, error_messages={
         'required' : u'Введите название точки доступа',

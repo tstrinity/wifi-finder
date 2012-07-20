@@ -6,14 +6,16 @@ from django.shortcuts import get_object_or_404, render_to_response
 from feedback.models import Feedback
 
 class FeedbackAdmin(admin.ModelAdmin):
-    
-    def view(self, obj):
-        return "<a href='%s'>View</a>" % obj.get_absolute_url()
+
+
     view.allow_tags = True
     
     list_display = ['email', 'message', 'time', 'type', 'view']
     search_fields = ['email', 'message']
     list_filter = ['type', 'time']
+
+    def view(self, obj):
+        return "<a href='%s'>View</a>" % obj.get_absolute_url()
     
     def get_urls(self):
         urls = super(FeedbackAdmin, self).get_urls()
