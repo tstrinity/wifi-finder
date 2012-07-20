@@ -141,6 +141,7 @@ INSTALLED_APPS = (
     'providers',
     'posts',
     'points',
+    'search',
     #'admin_tools',
     #'admin_tools.theming',
     #'admin_tools.menu',

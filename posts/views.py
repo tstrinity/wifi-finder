@@ -5,8 +5,12 @@ from posts.models import Post
 
 @cache_page(60 * 2)
 def index(request):
+    '''
+    index view for posts with pagination set to 10
+    cached set to 2 minutes
+    '''
     posts = Post.objects.all().order_by('created_at')
-    paginator = Paginator(posts, 2)
+    paginator = Paginator(posts, 10)
     page = request.GET.get('page')
     try:
         posts = paginator.page(page)
@@ -19,5 +23,8 @@ def index(request):
 
 @cache_page(60 * 2)
 def details(request, post_id):
+    '''
+    details view for post with given post_id
+    '''
     post = get_object_or_404(Post,pk=post_id)
     return render_to_response('posts/details.html',{'post' : post})

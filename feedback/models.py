@@ -5,9 +5,11 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from django.conf import settings
 
-#feedback model, ordering set to time desc
-#overriden default table name
 class Feedback(models.Model):
+    '''
+    feedback model, ordering set to time desc
+    default table name changed to 'feedbacks'
+    '''
     class Meta:
         ordering = ['-time']
         db_table = 'feedbacks'
