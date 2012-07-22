@@ -6,10 +6,10 @@ from django.template import RequestContext
 from feedback.forms import FeedbackForm
 
 def leave_feedback(request, template_name='feedback/feedback_form.html'):
-    '''
+    """
     returns a feedback form if GET and validates,saves it if POST
     redirects back after save
-    '''
+    """
     form = FeedbackForm(request.POST or None)
     if form.is_valid():
         feedback = form.save(commit=False)

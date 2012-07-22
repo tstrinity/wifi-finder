@@ -5,9 +5,9 @@ from django.template.context import RequestContext
 from posts.models import Post
 
 def search(request, query):
-    '''
+    """
     searches posts with given as a param query
-    '''
+    """
     try:
         if(query == ''):
             query = request.GET['query']

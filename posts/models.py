@@ -3,9 +3,9 @@ from django.utils.translation import ugettext_lazy as _
 from djangosphinx import SphinxSearch
 
 class Post(models.Model):
-    '''
+    """
     model for posts
-    '''
+    """
     title = models.CharField(max_length=100)
     content = models.TextField()
     created_at = models.DateTimeField()

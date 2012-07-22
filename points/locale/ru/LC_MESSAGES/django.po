@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-22 12:14+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: models.py:18
+msgid "Bad"
+msgstr "Плохое"
+
+#: models.py:19
+msgid "Average"
+msgstr "Среднее"
+
+#: models.py:20
+msgid "Good"
+msgstr "Хорошее"
+
+#: models.py:21
+msgid "Excellent"
+msgstr "Отличное"
+
+#: models.py:24 models.py:44
+msgid "Name"
+msgstr "Название"
+
+#: models.py:25 models.py:56
+msgid "Latitude"
+msgstr "Широта"
+
+#: models.py:26 models.py:58
+msgid "Longtitude"
+msgstr "Долгота"
+
+#: models.py:27 models.py:49
+msgid "Signal quality"
+msgstr "Качество сигнала"
+
+#: models.py:29 models.py:52
+msgid "Additional info"
+msgstr "Дополнительная информация"
+
+#: models.py:30 models.py:54
+msgid "Provider"
+msgstr "Провайдер"
+
+#: models.py:38 models.py:63
+msgid "Point"
+msgstr "Точка доступа"
+
+#: models.py:39 models.py:64
+msgid "Points"
+msgstr "Точки доступа"
+
+#: models.py:45
+msgid "Write access point name"
+msgstr "Введите название точки доступа"
+
+#: models.py:46
+msgid "Minimum length is 2 characters"
+msgstr "Минимальная длинна 2 символа"
+
+#: models.py:47
+msgid "Maximum length is 30 characters"
+msgstr "Максимальная длинна 30 символов"
+
+#: models.py:51
+msgid "Please, select signal quality"
+msgstr "Укажите качество сигнала"
+
+#: models.py:55
+msgid "Please, select provider"
+msgstr "Выберите провайдера"
+
+#: models.py:57
+msgid "Please enter latitude or set point location on map"
+msgstr "Введите широту или укажите место на карте"
+
+#: models.py:59
+msgid "Please enter longtitude or set point location on map"
+msgstr "Введите долготу или укажите место на карте"

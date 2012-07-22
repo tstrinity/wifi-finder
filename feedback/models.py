@@ -6,17 +6,19 @@ from django.core.urlresolvers import reverse
 from django.conf import settings
 
 class Feedback(models.Model):
-    '''
+    """
     feedback model, ordering set to time desc
     default table name changed to 'feedbacks'
-    '''
+    """
     class Meta:
         ordering = ['-time']
         db_table = 'feedbacks'
+        verbose_name = _('Feedback')
+        verbose_name_plural = _('Feedbacks')
 
-    email   = models.EmailField(verbose_name=u'Email')
-    type    = models.CharField(choices=settings.FEEDBACK_CHOICES, max_length=100, verbose_name=_(u'Тип'))
-    message = models.TextField(verbose_name=_(u'Сообщение'))
+    email   = models.EmailField(verbose_name= _('Email'))
+    type    = models.CharField(choices=settings.FEEDBACK_CHOICES, max_length=100, verbose_name=_('Type'))
+    message = models.TextField(verbose_name=_('Message'))
     time    = models.DateTimeField(auto_now_add=True, verbose_name=_('Time'))
 
     def __unicode__(self):
